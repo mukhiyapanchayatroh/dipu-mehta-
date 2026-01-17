@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>विपेन्द्र प्रसाद सिन्हा - रोह पंचायत</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .page { display: none; animation: fadeIn 0.5s ease-in-out; }
+        .active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .nav-link { cursor: pointer; transition: 0.3s; }
+        .nav-link:hover { color: #ff9933; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans">
+
+    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-2xl">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tighter">रोह <span class="text-orange-500">पंचायत 2026</span></div>
+            <div class="hidden md:flex space-x-8 font-semibold">
+                <span class="nav-link" onclick="showPage('home')">होम</span>
+                <span class="nav-link" onclick="showPage('manifesto')">घोषणा पत्र</span>
+                <span class="nav-link text-orange-500 border border-orange-500 px-4 py-1 rounded-full" onclick="showPage('login')">एडमिन</span>
+            </div>
+            <div class="md:hidden text-2xl" onclick="toggleMenu()"><i class="fa fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <div class="bg-blue-800 text-white text-center py-1 text-sm font-mono tracking-widest" id="liveClock"></div>
+
+    <section id="home" class="page active">
+        <header class="bg-gradient-to-b from-orange-100 to-white py-16 text-center border-b-8 border-orange-500">
+            <div class="container mx-auto px-4">
+                <div class="w-32 h-32 bg-white rounded-full mx-auto mb-6 shadow-2xl flex items-center justify-center border-4 border-slate-900">
+                    <i class="fa fa-user-check text-5xl text-orange-500"></i>
+                </div>
+                <h1 class="text-5xl font-black text-slate-900 mb-2">विपेन्द्र प्रसाद सिन्हा</h1>
+                <h2 class="text-2xl font-bold text-slate-600 mb-6">उर्फ (दिपु मेहता)</h2>
+                <p class="text-sm md:text-md bg-slate-900 text-white inline-block px-8 py-2 rounded-full font-medium">
+                    निवेदक: रोह, मनियोचक, खरिजामा, मुसेपुर, हरवंशबिगहा की समस्त जनता
+                </p>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-4 -mt-10">
+            <div class="bg-white rounded-3xl p-10 shadow-2xl text-center border-b-8 border-green-600">
+                <p id="mainShayari" class="text-2xl md:text-4xl italic font-black text-orange-600 leading-snug">
+                    लोड हो रहा है...
+                </p>
+            </div>
+        </div>
+
+        <main class="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-l-8 border-blue-800">
+                <h3 class="text-2xl font-bold text-blue-900 mb-6 flex items-center">
+                    <i class="fa fa-bullhorn mr-3"></i> आगामी कार्यक्रम
+                </h3>
+                <div id="mainEvent" class="p-6 bg-slate-50 rounded-2xl italic text-slate-500 text-lg">
+                    लोड हो रहा है...
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-xl border-l-8 border-orange-500">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+                    <i class="fa fa-phone-volume mr-3 text-orange-500"></i> संपर्क करें
+                </h3>
+                <p class="text-4xl font-black text-slate-900 mb-6">+91 7488417922</p>
+                <a href="https://wa.me/917488417922" class="block bg-green-600 text-white text-center py-4 rounded-2xl font-bold hover:bg-green-700 transition shadow-lg">
+                    <i class="fab fa-whatsapp mr-2"></i> व्हाट्सएप पर बात करें
+                </a>
+            </div>
+        </main>
+    </section>
+
+    <section id="manifesto" class="page container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div class="bg-green-700 p-8 text-white text-center">
+                <h2 class="text-4xl font-black">हमारा संकल्प</h2>
+                <p class="mt-2 opacity-80 font-medium italic">गाँव के विकास और समृद्धि के लिए हमारी प्रतिबद्धताएं</p>
+            </div>
+            <div class="p-10 space-y-8">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-orange-100 p-4 rounded-full text-orange-600 font-bold">01</div>
+                    <p class="text-xl font-semibold text-slate-700">पंचायत के हर घर तक शुद्ध पेयजल और पक्की नालियों की व्यवस्था।</p>
+                </div>
+                <div class="flex items-start space-x-4 border-t pt-8">
+                    <div class="bg-blue-100 p-4 rounded-full text-blue-600 font-bold">02</div>
+                    <p class="text-xl font-semibold text-slate-700">शिक्षा और स्वास्थ्य केंद्रों का आधुनिकीकरण।</p>
+                </div>
+                <div class="flex items-start space-x-4 border-t pt-8">
+                    <div class="bg-green-100 p-4 rounded-full text-green-600 font-bold">03</div>
+                    <p class="text-xl font-semibold text-slate-700">सरकारी योजनाओं का लाभ बिना किसी भ्रष्टाचार के सीधा जनता तक पहुँचाना।</p>
+                </div>
+            </div>
+            <div class="p-8 bg-slate-50 text-center">
+                <button onclick="showPage('home')" class="text-blue-900 font-bold hover:underline">← वापस मुख्य पृष्ठ पर आएं</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="login" class="page container mx-auto px-4 py-20">
+        <div id="loginForm" class="max-w-md mx-auto bg-white p-10 rounded-3xl shadow-2xl border-t-8 border-slate-900">
+            <h2 class="text-3xl font-bold text-center mb-8">एडमिन लॉगिन</h2>
+            <div class="space-y-6">
+                <input type="text" id="userInput" placeholder="यूजरनेम" class="w-full border-2 p-4 rounded-2xl outline-none focus:border-orange-500">
+                <input type="password" id="passInput" placeholder="पासवर्ड" class="w-full border-2 p-4 rounded-2xl outline-none focus:border-orange-500">
+                <button onclick="handleLogin()" class="w-full bg-slate-900 text-white py-4 rounded-2xl font-bold shadow-xl hover:bg-black transition">लॉगिन</button>
+            </div>
+        </div>
+
+        <div id="adminDashboard" class="hidden max-w-4xl mx-auto bg-white p-10 rounded-3xl shadow-2xl border-4 border-green-500">
+            <h2 class="text-3xl font-black text-green-700 mb-8 border-b pb-4">कंट्रोल पैनल: दिपु मेहता</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <label class="block font-bold text-slate-700 mb-2">शायरी अपडेट करें:</label>
+                    <textarea id="editShayari" class="w-full border-2 p-4 rounded-2xl h-32 focus:border-orange-500 outline-none"></textarea>
+                </div>
+                <div>
+                    <label class="block font-bold text-slate-700 mb-2">कार्यक्रम अपडेट करें:</label>
+                    <input type="text" id="editEvent" placeholder="उदा: 10 फरवरी - सभा" class="w-full border-2 p-4 rounded-2xl mb-6 outline-none focus:border-orange-500">
+                    <button id="firebaseSaveBtn" class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold shadow-xl hover:bg-green-700 transition">लाइव सेव करें</button>
+                </div>
+            </div>
+            <p class="mt-8 text-center text-red-500 font-bold cursor-pointer" onclick="location.reload()">लॉगआउट करें</p>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white py-12 text-center mt-20">
+        <p class="text-slate-400">© 2026. Built with Realtime Firebase by <span class="text-orange-500 font-bold">dhiraj mehta</span></p>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        // आपकी Firebase Config
+        const firebaseConfig = {
+            apiKey: "AIzaSyC7RoapoxY0nDoSsfa5mUGzEbaKFLmDQ4Y",
+            authDomain: "rohpanchayat.firebaseapp.com",
+            databaseURL: "https://rohpanchayat-default-rtdb.firebaseio.com",
+            projectId: "rohpanchayat",
+            storageBucket: "rohpanchayat.firebasestorage.app",
+            messagingSenderId: "122020322885",
+            appId: "1:122020322885:web:a0f88c60f6bec087d64d2c",
+            measurementId: "G-0PF05HQMQB"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // डेटा सुनना (Real-time Listening)
+        const contentRef = ref(db, 'content/');
+        onValue(contentRef, (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                document.getElementById('mainShayari').innerText = data.shayari || "रोह पंचायत के यही संदेश, मजबूत पंचायत - मजबूत देश।";
+                document.getElementById('mainEvent').innerText = data.event || "फिलहाल कोई आगामी कार्यक्रम तय नहीं है।";
+                
+                // एडमिन बॉक्स में भी वैल्यू भर दें
+                if(document.getElementById('editShayari')) document.getElementById('editShayari').value = data.shayari || "";
+                if(document.getElementById('editEvent')) document.getElementById('editEvent').value = data.event || "";
+            }
+        });
+
+        // डेटा सेव करना (Save to Firebase)
+        window.saveDataToFirebase = function() {
+            const s = document.getElementById('editShayari').value;
+            const e = document.getElementById('editEvent').value;
+            
+            set(ref(db, 'content/'), {
+                shayari: s,
+                event: e
+            }).then(() => {
+                alert("बधाई हो! पूरी दुनिया के लिए वेबसाइट अपडेट हो गई है।");
+                showPage('home');
+            }).catch((error) => {
+                alert("त्रुटि: " + error.message);
+            });
+        };
+
+        // बटन को फंक्शन से जोड़ना
+        document.getElementById('firebaseSaveBtn').onclick = window.saveDataToFirebase;
+    </script>
+
+    <script>
+        // UI Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        // Clock Function
+        function startClock() {
+            setInterval(() => {
+                const now = new Date();
+                document.getElementById('liveClock').innerHTML = `<i class="fa fa-clock mr-2"></i> ${now.toLocaleString('hi-IN')}`;
+            }, 1000);
+        }
+
+        // Login System
+        function handleLogin() {
+            const u = document.getElementById('userInput').value;
+            const p = document.getElementById('passInput').value;
+            if(u === "9508903619" && p === "8969276441") {
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('adminDashboard').classList.remove('hidden');
+            } else {
+                alert("गलत यूजरनेम या पासवर्ड!");
+            }
+        }
+
+        window.onload = startClock;
+    </script>
+</body>
+</html>
